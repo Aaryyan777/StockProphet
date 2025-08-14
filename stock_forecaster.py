@@ -123,6 +123,9 @@ print(f"Model saved as {model_file}")
 
 # Plotting the final forecast 
 future_full = model_final.make_future_dataframe(periods=30)
+future_full['SMA_10'] = df_proc['SMA_10'].iloc[-1]
+future_full['SMA_30'] = df_proc['SMA_30'].iloc[-1]
+future_full['RSI'] = df_proc['RSI'].iloc[-1]
 forecast_full = model_final.predict(future_full)
 
 plt.figure(figsize=(12, 6))
