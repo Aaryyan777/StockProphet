@@ -8,6 +8,9 @@ This project demonstrates time series forecasting using Facebook Prophet to pred
 ### 1. Data Acquisition
 Historical stock data for AAPL was downloaded from Yahoo Finance using the `yfinance` library. The data spans from January 1, 2020, to January 1, 2024.
 
+### Variable and Function Names
+The names of used variables and functions are given as such to make it easier to understand their function and use.
+
 ### 2. Data Preprocessing
 The raw data was preprocessed to fit the requirements of the Prophet model. This involved selecting the 'Date' and 'Close' price columns and renaming them to 'ds' (datestamp) and 'y' (dependent variable), respectively. The dataset was then split into an 80% training set and a 20% testing set.
 
@@ -79,8 +82,7 @@ Crucially, the average directional accuracy of **92.72%** is outstanding and con
 
 ### 1. Setup
 1.  Ensure you have Python installed.
-2.  Navigate to the project directory:
-    `cd C:\Users\DELL\time-series-forecasting`
+2.  Navigate to the project directory.
 3.  Install the required libraries:
     `pip install -r requirements.txt`
 
