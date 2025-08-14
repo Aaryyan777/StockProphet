@@ -106,7 +106,7 @@ print(f"Average MAPE: {np.mean(mapes):.2f}% (Std: {np.std(mapes):.2f}%)")
 print(f"Average R-squared (R²): {np.mean(r2s):.2f} (Std: {np.std(r2s):.2f})")
 print(f"Average Directional Accuracy: {np.mean(dir_accs):.2f}% (Std: {np.std(dir_accs):.2f}%)")
 
-# Retrain the best model on the full dataset for deployment
+# This code retrains the best model on the full dataset
 print("\nRetraining best model on full dataset for deployment...")
 model_final = Prophet(
     changepoint_prior_scale=best_params['changepoint_prior_scale'],
@@ -121,17 +121,17 @@ model_file = 'prophet_model.joblib'
 joblib.dump(model_final, model_file)
 print(f"Model saved as {model_file}")
 
-# Plotting the final forecast (optional, can be removed for production script)
-# future_full = model_final.make_future_dataframe(periods=30)
-# forecast_full = model_final.predict(future_full)
+# Plotting the final forecast 
+future_full = model_final.make_future_dataframe(periods=30)
+forecast_full = model_final.predict(future_full)
 
-# plt.figure(figsize=(12, 6))
-# model_final.plot(forecast_full, ax=plt.gca())
-# plt.title(f'{tkr} Stock Price Forecast (Full Data)')
-# plt.xlabel('Date')
-# plt.ylabel('Close Price')
-# plt.grid(True)
-# plt.show()
+plt.figure(figsize=(12, 6))
+model_final.plot(forecast_full, ax=plt.gca())
+plt.title(f'{tkr} Stock Price Forecast (Full Data)')
+plt.xlabel('Date')
+plt.ylabel('Close Price')
+plt.grid(True)
+plt.show()
 
-# model_final.plot_components(forecast_full)
-# plt.show()
+model_final.plot_components(forecast_full)
+plt.show()
