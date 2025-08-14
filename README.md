@@ -8,7 +8,7 @@ This project demonstrates time series forecasting using Facebook Prophet to pred
 ### 1. Data Acquisition
 Historical stock data for AAPL was downloaded from Yahoo Finance using the `yfinance` library. The data spans from January 1, 2020, to January 1, 2024.
 
-### Variable and Function Names
+### 1.1. Variable and Function Names
 The names of used variables and functions are given as such to make it easier to understand their function and use.
 
 ### 2. Data Preprocessing
